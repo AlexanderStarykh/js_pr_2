@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function (){
         }
     }
 
-    info.addEventListener('click', function(event) {
+    info.addEventListener('click', (event) => {
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')){
             for (let i = 0; i < tab.length; i++){
@@ -67,10 +67,10 @@ window.addEventListener('DOMContentLoaded', function (){
             let t = getTimeRemaining(endtime);
 
             function addZero(num){
-                        if(num <= 9) {
-                            return '0' + num;
-                        } else return num;
-                    }
+                if(num <= 9) {
+                    return '0' + num;
+                } else return num;
+            }
 
             days.textContent = addZero(t.days);
             hours.textContent = addZero(t.hours);
@@ -97,13 +97,13 @@ window.addEventListener('DOMContentLoaded', function (){
         overlay = document.querySelector('.overlay'),
         close = document.querySelector('.popup-close');
 
-    more.addEventListener('click', function(){
+    more.addEventListener('click', () =>{
         overlay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
     });
 
-    close.addEventListener('click', function() {
+    close.addEventListener('click', () => {
         overlay.style.display = 'none';
         more.classList.remove('more-splash');
         document.body.style.overflow = '';
